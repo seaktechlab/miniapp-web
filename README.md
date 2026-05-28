@@ -1,3 +1,12 @@
+# Introduction
+
+JBright allows web developers to build mini apps using standard JavaScript, HTML, and CSS while still accessing native mobile features such as camera, permissions, notifications, biometrics, and other device capabilities through simple JavaScript functions.
+
+It also enables communication between the mini app and the native iOS/Android application, allowing JavaScript to trigger native functions and securely exchange data between the web layer and the native mobile application.
+
+For example, a mini app can send payment data to the native banking app through JBright, where the native application securely processes the payment and returns the transaction result back to the mini app.
+
+
 # Mini App Web Sample
 
 Professional mini app demo for banking/native mobile integration using JavaScript, HTML, and CSS.
