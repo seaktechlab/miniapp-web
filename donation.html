@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Donation KHQR</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Donate via KHQR</title>
 
 <style>
 
@@ -15,149 +20,269 @@
 }
 
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     padding:24px;
-    background:linear-gradient(180deg,#F8FAFC,#EEF4FF);
+
+    background:linear-gradient(
+        180deg,
+        #F5F7FB 0%,
+        #EEF3F9 100%
+    );
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        sans-serif;
 }
 
 .card{
+
     width:100%;
-    max-width:420px;
+    max-width:430px;
+
     background:#FFFFFF;
+
     border-radius:28px;
-    padding:32px;
-    text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+}
+
+.header{
+
+    background:#1B3351;
+
+    padding:36px 24px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .logo{
-    width:80px;
-    height:80px;
-    margin:0 auto 24px;
-    border-radius:20px;
-    background:#0054A6;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    font-weight:700;
+
+    width:250px;
+    max-width:100%;
+    height:auto;
+    display:block;
 }
 
-h1{
-    color:#111827;
+.content{
+
+    padding:32px;
+    text-align:center;
+}
+
+.title{
+
     font-size:28px;
-    margin-bottom:10px;
+    font-weight:700;
+    color:#111827;
+
+    margin-bottom:12px;
 }
 
-p{
+.description{
+
     color:#6B7280;
-    line-height:1.6;
+
+    font-size:15px;
+
+    line-height:1.7;
 }
 
 .qr{
+
     width:100%;
     max-width:320px;
-    margin:24px auto;
+
+    margin:
+        24px auto;
+
     display:block;
+
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.10);
 }
 
-.button{
+.primary-button{
+
     display:block;
+
     width:100%;
+
     padding:16px;
-    border-radius:16px;
-    background:#0054A6;
+
+    background:#1B3351;
+
     color:white;
+
     text-decoration:none;
+
+    border-radius:16px;
+
     font-size:16px;
+
     font-weight:700;
-    margin-top:8px;
+
+    transition:.2s;
 }
 
-.secondary{
+.primary-button:hover{
+
+    opacity:.95;
+}
+
+.secondary-button{
+
     display:block;
+
     width:100%;
+
     padding:16px;
-    border-radius:16px;
-    background:#F3F4F6;
-    color:#111827;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:600;
+
     margin-top:12px;
+
+    background:#F3F4F6;
+
+    color:#111827;
+
+    text-decoration:none;
+
+    border-radius:16px;
+
+    font-size:15px;
+
+    font-weight:600;
 }
 
 .note{
+
     margin-top:20px;
-    font-size:14px;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    background:#F8FAFC;
+
+    text-align:left;
+
     color:#6B7280;
+
+    font-size:14px;
+
     line-height:1.8;
 }
 
+.footer{
+
+    margin-top:18px;
+
+    color:#9CA3AF;
+
+    font-size:12px;
+}
+
 </style>
+
 </head>
+
 <body>
 
 <div class="card">
 
-    <div class="logo">KH</div>
+    <div class="header">
 
-    <h1>Donate via KHQR</h1>
+        <img
+            class="logo"
+            src="https://www.acledabank.com.kh/kh/assets/layout/logo3.png"
+            alt="ACLEDA Logo">
 
-    <p>
-        Scan this KHQR using ACLEDA, ABA,
-        Wing, or any KHQR-supported banking app.
-    </p>
+    </div>
 
-    <img
-        class="qr"
-        src="https://www.acledabank.com.kh/qr/toanchet-manual/FKC-QR-KHR.jpg"
-        alt="KHQR Donation">
+    <div class="content">
 
-    <a
-        class="button"
-        href="https://acledabank.com.kh/acleda?id=bill&billId=1095&comcode=KH0144">
+        <div class="title">
+            Donate via KHQR
+        </div>
 
-        Open ACLEDA App
+        <div class="description">
 
-    </a>
+            Scan this KHQR using ACLEDA,
+            ABA, Wing, Prince Bank,
+            Sathapana Bank,
+            or any KHQR-supported banking application.
 
-    <a
-        class="secondary"
-        href="https://www.acledabank.com.kh/qr/toanchet-manual/FKC-QR-KHR.jpg"
-        target="_blank">
+        </div>
 
-        View QR Full Size
+        <img
+            class="qr"
+            src="https://www.acledabank.com.kh/qr/toanchet-manual/FKC-QR-KHR.jpg"
+            alt="KHQR Donation">
 
-    </a>
+        <a
+            class="primary-button"
+            href="https://acledabank.com.kh/acleda?id=bill&billId=1095&comcode=KH0144">
 
-    <div class="note">
+            Open ACLEDA App
 
-        If ACLEDA does not open inside Facebook or Instagram:
+        </a>
 
-        <br><br>
+        <a
+            class="secondary-button"
+            href="https://www.acledabank.com.kh/qr/toanchet-manual/FKC-QR-KHR.jpg"
+            target="_blank">
 
-        1. Tap ⋯ menu
+            View QR Full Size
 
-        <br>
+        </a>
 
-        2. Select "Open in Browser"
+        <div class="note">
 
-        <br>
+            <strong>Facebook / Instagram Users</strong>
 
-        3. Tap "Open ACLEDA App"
+            <br><br>
+
+            If the ACLEDA App does not open:
+
+            <br>
+
+            1. Tap the ⋯ menu
+
+            <br>
+
+            2. Select <strong>Open in Browser</strong>
+
+            <br>
+
+            3. Tap <strong>Open ACLEDA App</strong> again
+
+        </div>
+
+        <div class="footer">
+
+            Secure KHQR Payment
+
+        </div>
 
     </div>
 
 </div>
 
 </body>
+
 </html>
 
