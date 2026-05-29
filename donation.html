@@ -1,13 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Donate via KHQR</title>
 
@@ -20,21 +18,16 @@
 }
 
 body{
-
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     padding:24px;
-
     background:linear-gradient(
         180deg,
         #F5F7FB 0%,
         #EEF3F9 100%
     );
-
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -44,33 +37,24 @@ body{
 }
 
 .card{
-
     width:100%;
     max-width:430px;
-
     background:#FFFFFF;
-
     border-radius:28px;
-
     overflow:hidden;
-
     box-shadow:
         0 20px 60px rgba(0,0,0,.08);
 }
 
 .header{
-
     background:#1B3351;
-
-    padding:36px 24px;
-
+    padding:40px 24px;
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
 .logo{
-
     width:250px;
     max-width:100%;
     height:auto;
@@ -78,122 +62,133 @@ body{
 }
 
 .content{
-
     padding:32px;
     text-align:center;
 }
 
 .title{
-
     font-size:28px;
     font-weight:700;
     color:#111827;
-
     margin-bottom:12px;
 }
 
 .description{
-
     color:#6B7280;
-
     font-size:15px;
-
     line-height:1.7;
 }
 
 .qr{
-
     width:100%;
     max-width:320px;
-
-    margin:
-        24px auto;
-
+    margin:24px auto;
     display:block;
-
     border-radius:20px;
-
     box-shadow:
         0 12px 30px rgba(0,0,0,.10);
 }
 
 .primary-button{
-
     display:block;
-
     width:100%;
-
     padding:16px;
-
     background:#1B3351;
-
     color:white;
-
     text-decoration:none;
-
     border-radius:16px;
-
     font-size:16px;
-
     font-weight:700;
-
     transition:.2s;
 }
 
 .primary-button:hover{
-
     opacity:.95;
 }
 
 .secondary-button{
-
     display:block;
-
     width:100%;
-
     padding:16px;
-
     margin-top:12px;
-
     background:#F3F4F6;
-
     color:#111827;
-
     text-decoration:none;
-
     border-radius:16px;
-
     font-size:15px;
-
     font-weight:600;
 }
 
 .note{
-
     margin-top:20px;
-
     padding:16px;
-
     border-radius:16px;
-
     background:#F8FAFC;
-
     text-align:left;
-
     color:#6B7280;
-
     font-size:14px;
-
     line-height:1.8;
 }
 
 .footer{
-
     margin-top:18px;
-
     color:#9CA3AF;
-
     font-size:12px;
+}
+
+/* Loading Overlay */
+
+#loadingOverlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    transition:.3s;
+}
+
+.loader-card{
+    text-align:center;
+}
+
+.loader{
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    border:4px solid #E5E7EB;
+    border-top:4px solid #1B3351;
+
+    animation:spin 1s linear infinite;
+
+    margin:auto auto 20px;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.loader-title{
+    color:#111827;
+    font-size:22px;
+    font-weight:700;
+}
+
+.loader-subtitle{
+    color:#6B7280;
+    margin-top:8px;
 }
 
 </style>
@@ -201,6 +196,24 @@ body{
 </head>
 
 <body>
+
+<div id="loadingOverlay">
+
+    <div class="loader-card">
+
+        <div class="loader"></div>
+
+        <div class="loader-title">
+            Opening ACLEDA App
+        </div>
+
+        <div class="loader-subtitle">
+            Please wait...
+        </div>
+
+    </div>
+
+</div>
 
 <div class="card">
 
@@ -223,8 +236,8 @@ body{
 
             Scan this KHQR using ACLEDA,
             ABA, Wing, Prince Bank,
-            Sathapana Bank,
-            or any KHQR-supported banking application.
+            Sathapana Bank, or any
+            KHQR-supported banking application.
 
         </div>
 
@@ -264,25 +277,82 @@ body{
 
             <br>
 
-            2. Select <strong>Open in Browser</strong>
+            2. Select Open in Browser
 
             <br>
 
-            3. Tap <strong>Open ACLEDA App</strong> again
+            3. Tap Open ACLEDA App again
 
         </div>
 
         <div class="footer">
-
             Secure KHQR Payment
-
         </div>
 
     </div>
 
 </div>
 
+<script>
+
+const ACLEDA_LINK =
+"https://acledabank.com.kh/acleda?id=bill&billId=1095&comcode=KH0144";
+
+/*
+ Auto try opening app
+*/
+setTimeout(() => {
+
+    window.location.href =
+    ACLEDA_LINK;
+
+}, 1200);
+
+/*
+ Hide loading after a few seconds
+ If app opens, user leaves page.
+ If app does not open, user sees KHQR page.
+*/
+setTimeout(() => {
+
+    const overlay =
+    document.getElementById(
+        "loadingOverlay"
+    );
+
+    overlay.style.opacity = "0";
+
+    setTimeout(() => {
+
+        overlay.style.display = "none";
+
+    }, 300);
+
+}, 3500);
+
+/*
+ If user returns from app,
+ remove overlay immediately.
+*/
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(document.hidden){
+
+            const overlay =
+            document.getElementById(
+                "loadingOverlay"
+            );
+
+            overlay.style.display =
+            "none";
+        }
+    }
+);
+
+</script>
+
 </body>
 
 </html>
-
