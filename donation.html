@@ -3,11 +3,35 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Donate via KHQR</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Continue in ACLEDA Mobile</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
+
+:root{
+
+    --primary:#1B3351;
+    --primaryLight:#27466D;
+
+    --background:#F4F7FB;
+    --card:#FFFFFF;
+
+    --text:#111827;
+    --secondary:#6B7280;
+
+    --border:#E5E7EB;
+}
 
 *{
     margin:0;
@@ -15,163 +39,276 @@
     box-sizing:border-box;
 }
 
+html{
+    -webkit-text-size-adjust:100%;
+}
+
 body{
+
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:24px;
-    background:linear-gradient(
-        180deg,
-        #F5F7FB 0%,
-        #EEF3F9 100%
-    );
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(27,51,81,.08),
+            transparent 40%
+        ),
+        var(--background);
+
     font-family:
+        "Inter",
         -apple-system,
         BlinkMacSystemFont,
         "SF Pro Display",
         "Segoe UI",
         sans-serif;
+
+    color:var(--text);
+
+    padding:24px;
+}
+
+.container{
+
+    width:100%;
+    max-width:520px;
+
+    margin:0 auto;
 }
 
 .card{
-    width:100%;
-    max-width:430px;
-    background:#FFFFFF;
-    border-radius:28px;
+
+    background:var(--card);
+
+    border-radius:32px;
+
     overflow:hidden;
+
     box-shadow:
-        0 20px 60px rgba(0,0,0,.08);
+        0 24px 80px rgba(0,0,0,.08);
 }
+
+/* HEADER */
 
 .header{
-    background:#1B3351;
-    padding:40px 24px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
 
-.logo{
-    width:250px;
-    max-width:100%;
-    height:auto;
-    display:block;
-}
+    background:linear-gradient(
+        180deg,
+        #1B3351 0%,
+        #244266 100%
+    );
 
-.content{
-    padding:32px;
+    padding:42px 24px;
+
     text-align:center;
 }
 
-.title{
-    font-size:28px;
+.logo{
+
+    width:260px;
+
+    max-width:100%;
+
+    display:block;
+
+    margin:auto;
+}
+
+/* CONTENT */
+
+.content{
+
+    padding:34px;
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:#EEF2FF;
+
+    color:#1B3351;
+
+    font-size:13px;
+
     font-weight:700;
-    color:#111827;
-    margin-bottom:12px;
+}
+
+.title{
+
+    margin-top:18px;
+
+    font-size:36px;
+
+    font-weight:800;
+
+    letter-spacing:-0.03em;
+
+    line-height:1.1;
+
+    color:var(--text);
 }
 
 .description{
-    color:#6B7280;
-    font-size:15px;
+
+    margin-top:14px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    line-height:1.75;
+
+    color:var(--secondary);
+}
+
+/* PRIMARY CTA */
+
+.primary-button{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    height:64px;
+
+    margin-top:28px;
+
+    border-radius:20px;
+
+    background:var(--primary);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.primary-button:hover{
+
+    background:var(--primaryLight);
+}
+
+.primary-button:active{
+
+    transform:scale(.99);
+}
+
+/* QR SECTION */
+
+.qr-section{
+
+    margin-top:32px;
+
+    padding-top:28px;
+
+    border-top:1px solid var(--border);
+}
+
+.qr-title{
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+.qr-subtitle{
+
+    text-align:center;
+
+    color:var(--secondary);
+
     line-height:1.7;
+
+    font-size:15px;
+
+    margin-bottom:22px;
 }
 
 .qr{
+
     width:100%;
-    max-width:320px;
-    margin:24px auto;
+
+    max-width:300px;
+
     display:block;
-    border-radius:20px;
+
+    margin:auto;
+
+    border-radius:24px;
+
     box-shadow:
         0 12px 30px rgba(0,0,0,.10);
 }
 
-.primary-button{
-    display:block;
-    width:100%;
-    padding:16px;
-    background:#1B3351;
-    color:white;
-    text-decoration:none;
-    border-radius:16px;
-    font-size:16px;
-    font-weight:700;
-}
+/* HELP BOX */
 
-.secondary-button{
-    display:block;
-    width:100%;
-    padding:16px;
-    margin-top:12px;
-    background:#F3F4F6;
-    color:#111827;
-    text-decoration:none;
-    border-radius:16px;
-    font-size:15px;
-    font-weight:600;
-}
+.help{
 
-.note{
-    margin-top:20px;
-    padding:16px;
-    border-radius:16px;
+    margin-top:28px;
+
+    padding:18px;
+
+    border-radius:18px;
+
     background:#F8FAFC;
-    text-align:left;
-    color:#6B7280;
+
+    color:var(--secondary);
+
     font-size:14px;
+
     line-height:1.8;
 }
 
+.help strong{
+
+    color:var(--text);
+}
+
+/* FOOTER */
+
 .footer{
-    margin-top:18px;
+
+    margin-top:24px;
+
+    text-align:center;
+
     color:#9CA3AF;
+
     font-size:12px;
 }
 
-/* Loading Overlay */
+@media (max-width:480px){
 
-#loadingOverlay{
-    position:fixed;
-    inset:0;
-    background:rgba(255,255,255,.97);
-    backdrop-filter:blur(10px);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    transition:.3s;
-}
-
-.loader-card{
-    text-align:center;
-}
-
-.loader{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:4px solid #E5E7EB;
-    border-top:4px solid #1B3351;
-    animation:spin 1s linear infinite;
-    margin:auto auto 20px;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
+    .content{
+        padding:28px;
     }
-}
 
-.loader-title{
-    color:#111827;
-    font-size:22px;
-    font-weight:700;
-}
+    .title{
+        font-size:32px;
+    }
 
-.loader-subtitle{
-    color:#6B7280;
-    margin-top:8px;
+    .logo{
+        width:220px;
+    }
 }
 
 </style>
@@ -180,94 +317,95 @@ body{
 
 <body>
 
-<div id="loadingOverlay">
+<div class="container">
 
-    <div class="loader-card">
+    <div class="card">
 
-        <div class="loader"></div>
+        <div
+            class="header"
+            onclick="openAcleda()"
+            style="cursor:pointer;">
 
-        <div class="loader-title">
-            Opening ACLEDA App
-        </div>
-
-        <div class="loader-subtitle">
-            Please wait...
-        </div>
-
-    </div>
-
-</div>
-
-<div class="card">
-
-    <div class="header">
-
-        <img
-            class="logo"
-            src="https://www.acledabank.com.kh/kh/assets/layout/logo3.png"
-            alt="ACLEDA Logo">
-
-    </div>
-
-    <div class="content">
-
-        <div class="title">
-            Donate via KHQR
-        </div>
-
-        <div class="description">
-            Scan this KHQR using ACLEDA,
-            ABA, Wing, Prince Bank,
-            Sathapana Bank, or any
-            KHQR-supported banking application.
-        </div>
-
-        <img
-            class="qr"
-            src="https://www.acledabank.com.kh/qr/toanchet-manual/FKC-QR-KHR.jpg"
-            alt="KHQR Donation">
-
-        <a
-            class="primary-button"
-            href="https://acledabank.com.kh/acleda?id=bill&billId=1095&comcode=KH0144">
-
-            Open ACLEDA App
-
-        </a>
-
-        <a
-            class="secondary-button"
-            href="https://www.acledabank.com.kh/qr/toanchet-manual/FKC-QR-KHR.jpg"
-            target="_blank">
-
-            View QR Full Size
-
-        </a>
-
-        <div class="note">
-
-            <strong>Facebook / Instagram Users</strong>
-
-            <br><br>
-
-            If the ACLEDA App does not open:
-
-            <br>
-
-            1. Tap the ⋯ menu
-
-            <br>
-
-            2. Select Open in Browser
-
-            <br>
-
-            3. Tap Open ACLEDA App again
+            <img
+                class="logo"
+                src="https://www.acledabank.com.kh/kh/assets/layout/logo3.png"
+                alt="ACLEDA Logo">
 
         </div>
 
-        <div class="footer">
-            Secure KHQR Payment
+        <div class="content">
+
+            <div class="badge">
+                Secure Payment
+            </div>
+
+            <div class="title">
+                Continue in ACLEDA Mobile
+            </div>
+
+            <div class="description">
+
+                Open ACLEDA Mobile to continue your donation.
+                If the application cannot be opened,
+                use the KHQR payment option below.
+
+            </div>
+
+            <a
+                class="primary-button"
+                href="https://acledabank.com.kh/acleda?id=bill&billId=1095&comcode=KH0144">
+
+                Open ACLEDA Mobile
+
+            </a>
+
+            <div class="qr-section">
+
+                <div class="qr-title">
+                    KHQR Alternative Payment
+                </div>
+
+                <div class="qr-subtitle">
+
+                    Scan with ACLEDA, ABA, Wing,
+                    Sathapana, Prince Bank,
+                    or any KHQR-supported application.
+
+                </div>
+
+                <img
+                    class="qr"
+                    src="https://www.acledabank.com.kh/qr/toanchet-manual/FKC-QR-KHR.jpg"
+                    alt="KHQR">
+
+            </div>
+
+            <div class="help">
+
+                <strong>Facebook & Instagram Users</strong>
+
+                <br><br>
+
+                If ACLEDA Mobile does not open:
+
+                <br>
+
+                • Tap the ⋯ menu
+
+                <br>
+
+                • Select "Open in Browser"
+
+                <br>
+
+                • Tap "Open ACLEDA Mobile" again
+
+            </div>
+
+            <div class="footer">
+                Secure KHQR Payment
+            </div>
+
         </div>
 
     </div>
@@ -276,40 +414,14 @@ body{
 
 <script>
 
-const ACLEDA_LINK =
-"https://acledabank.com.kh/acleda?id=bill&billId=1095&comcode=KH0144";
+function openAcleda(){
 
-/*
- Auto attempt to open ACLEDA
- */
-setTimeout(function(){
-
-    location.replace(ACLEDA_LINK);
-
-}, 800);
-
-/*
- If still on page after 3 seconds,
- hide loading and show KHQR page.
- */
-setTimeout(function(){
-
-    const overlay =
-        document.getElementById(
-            "loadingOverlay"
-        );
-
-    overlay.style.opacity = "0";
-
-    setTimeout(function(){
-
-        overlay.style.display = "none";
-
-    },300);
-
-},3000);
+    window.location.href =
+    "https://acledabank.com.kh/acleda?id=bill&billId=1095&comcode=KH0144";
+}
 
 </script>
 
 </body>
 </html>
+
